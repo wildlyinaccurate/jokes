@@ -16,7 +16,7 @@
     </head>
     <body>
         <div id="joke">
-            <h1 id="telling"></h1>
+            <h1 id="question"></h1>
             <h1 id="punchline"></h1>
         </div>
 
@@ -25,17 +25,20 @@
                 .then(response => response.json())
                 .then(jokes => {
                     const l = jokes.length
-                    let tellingIdx = r(l)
+                    let questionIdx = r(l)
                     let punchlineIdx = r(l)
 
-                    while (tellingIdx === punchlineIdx) {
+                    while (questionIdx === punchlineIdx) {
+                        // Whoa whoa whoa! We can't have a punchline that matches
+                        // the question! Better keep going until we find a
+                        // punchline that has no relation to the question
                         punchlineIdx = r(l)
                     }
 
-                    const telling = jokes[tellingIdx][0]
+                    const question = jokes[questionIdx][0]
                     const punchline = jokes[punchlineIdx][1]
 
-                    document.getElementById('telling').textContent = telling
+                    document.getElementById('question').textContent = question
                     document.getElementById('punchline').textContent = punchline
                 })
 

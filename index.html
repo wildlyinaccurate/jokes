@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jokes</title>
+
+        <style>
+            #joke {
+                font-family: sans-serif;
+                padding-top: 10rem;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="joke">
+            <h1 id="telling"></h1>
+            <h1 id="punchline"></h1>
+        </div>
+
+        <script>
+            fetch('jokes.json')
+                .then(response => response.json())
+                .then(jokes => {
+                    const l = jokes.length
+                    let tellingIdx = r(l)
+                    let punchlineIdx = r(l)
+
+                    while (tellingIdx === punchlineIdx) {
+                        punchlineIdx = r(l)
+                    }
+
+                    const telling = jokes[tellingIdx][0]
+                    const punchline = jokes[punchlineIdx][1]
+
+                    document.getElementById('telling').textContent = telling
+                    document.getElementById('punchline').textContent = punchline
+                })
+
+            function r(n) {
+                return Math.floor(Math.random() * n)
+            }
+        </script>
+    </body>
+</html>

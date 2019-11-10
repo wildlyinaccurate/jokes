@@ -141,7 +141,11 @@
 
 	[
 		"Why are frogs so happy?",
-		"They eat whatever bugs them Q. What do you get when you cross a cow and a duck? A. Milk and quackers!"
+		"They eat whatever bugs them"
+	],
+	[
+		"What do you get when you cross a cow and a duck?",
+		"Milk and quackers!"
 	],
 
 	[
@@ -866,7 +870,11 @@
 
 	[
 		"What has one horn and gives milk",
-		"A milk truck. Q. Did you hear about the party a little boy had for his sisters barbie dolls? A. It was a Barbie-Q."
+		"A milk truck."
+	],
+	[
+		"Did you hear about the party a little boy had for his sisters barbie dolls?",
+		"It was a Barbie-Q."
 	],
 
 	[
